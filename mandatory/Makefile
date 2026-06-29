@@ -1,6 +1,6 @@
 SRC_DIR = src/fr/bepoisso/avaj
 BUILD_DIR = bin
-MAIN_CLASS = fr.bepoisso.avaj.Main
+MAIN_CLASS = Main
 
 SOURCES = \
 	$(SRC_DIR)/Main.java \
