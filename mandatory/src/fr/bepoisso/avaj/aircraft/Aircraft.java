@@ -1,4 +1,8 @@
-public class Aircraft {
+package fr.bepoisso.avaj.aircraft;
+
+import fr.bepoisso.avaj.coordinates.Coordinates;
+
+public abstract class Aircraft extends Flyable {
 	protected long id;
 	protected String name;
 	protected Coordinates coordinates;
@@ -8,4 +12,5 @@ public class Aircraft {
 		this.name = p_name;
 		this.coordinates = p_coordinates;
 	}
+
 }

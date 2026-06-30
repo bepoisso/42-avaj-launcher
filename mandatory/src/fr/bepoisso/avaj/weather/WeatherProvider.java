@@ -1,3 +1,7 @@
+package fr.bepoisso.avaj.weather;
+
+import fr.bepoisso.avaj.coordinates.Coordinates;
+
 public class WeatherProvider {
 	private String[] weather;
 

@@ -10,9 +10,15 @@ SOURCES = \
 	$(SRC_DIR)/aircraft/JetPlane.java \
 	$(SRC_DIR)/coordinates/Coordinates.java \
 	$(SRC_DIR)/simulator/Simulator.java \
-	$(SRC_DIR)/tower/Tower.java \
-	$(SRC_DIR)/tower/WeatherTower.java \
-	$(SRC_DIR)/weather/WeatherProvider.java
+	$(SRC_DIR)/weather/Tower.java \
+	$(SRC_DIR)/weather/WeatherTower.java \
+	$(SRC_DIR)/weather/WeatherProvider.java \
+	$(SRC_DIR)/logger/Logger.java \
+	$(SRC_DIR)/parser/Parser.java \
+	$(SRC_DIR)/exception/InvalidAircraftException.java \
+	$(SRC_DIR)/exception/InvalidCoordinateException.java \
+	$(SRC_DIR)/exception/InvalidScenarioException.java \
+
 
 all: $(BUILD_DIR)/.compiled
 
