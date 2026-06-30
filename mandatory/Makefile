@@ -27,6 +27,8 @@ run: all
 clean:
 	rm -rf $(BUILD_DIR)
 
+fclean: clean
+
 re: clean all
 
-.PHONY: all run clean re
+.PHONY: all run clean fclean re
