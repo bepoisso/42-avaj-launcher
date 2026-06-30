@@ -1,5 +1,6 @@
-# Compiled class file
+# Compiled files
 *.class
+.compiled
 
 # Package Files
 *.jar
@@ -9,6 +10,7 @@
 *.zip
 *.tar.gz
 *.rar
+**/bin/
 
 # VS Code
 .vscode/
