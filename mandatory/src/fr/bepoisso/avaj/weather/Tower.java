@@ -1,6 +1,7 @@
 package fr.bepoisso.avaj.weather;
 
 import fr.bepoisso.avaj.aircraft.Flyable;
+import java.util.List;
 
 public class Tower {
 	private List<Flyable> observers;
