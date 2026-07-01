@@ -4,10 +4,10 @@ import fr.bepoisso.avaj.coordinates.Coordinates;
 
 public class WeatherTower extends Tower {
 	public String getWeather(Coordinates p_coordinates) {
-		// TODO
+		return WeatherProvider.getInstance().getCurrentWeather(p_coordinates);
 	}
 
-	public void chengeWeather() {
-		// TODO
+	public void changeWeather() {
+		conditionChanged();
 	}
 }
