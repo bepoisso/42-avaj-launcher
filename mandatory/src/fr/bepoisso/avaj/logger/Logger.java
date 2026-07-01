@@ -5,12 +5,11 @@ import fr.bepoisso.avaj.exception.InvalidLoggerException;
 import java.io.FileWriter;
 import java.io.IOException;
 
-// TODO: Sigleton this class
 public class Logger {
+	private static Logger instance;
+	private FileWriter writer = null;
 
-	FileWriter writer = null;
-
-	public Logger()
+	private Logger()
 	throws InvalidLoggerException {
 		try {
 			writer = new FileWriter("simulation.txt", true);
@@ -36,5 +35,12 @@ public class Logger {
 		} catch (IOException e) {
 			throw new InvalidLoggerException(e.getMessage());
 		}
+	}
+
+	private static Logger getInstance()
+	throws InvalidLoggerException {
+		if (instance == null)
+			instance = new Logger();
+		return instance;
 	}
 }
