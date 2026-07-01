@@ -16,11 +16,11 @@ public class Coordinates {
 		this.height = p_height;
 	}
 
-	private void checkValue() {
+	public void checkValue() {
 		if (height > 100)
 			height = 100;
-		if (height <= 0);
-			// Land the aircraft. unregisters from the weather tower, and logs a message.
+		else if (height < 0)
+			height = 0;
 	}
 
 	public int getLongitude() {
@@ -35,27 +35,27 @@ public class Coordinates {
 		return this.height;
 	}
 
-	public void additionLongitude(int n) {
+	public void increaseLongitude(int n) {
 		longitude += n;
 	}
 
-	public void additionLatitude(int n) {
+	public void increaseLatitude(int n) {
 		latitude += n;
 	}
 
-	public void additionHeight(int n) {
+	public void increaseHeight(int n) {
 		height += n;
 	}
 
-	public void substractLongitude(int n) {
+	public void decreaseLongitude(int n) {
 		longitude -= n;
 	}
 
-	public void substractLatitude(int n) {
+	public void decreaseLatitude(int n) {
 		latitude -= n;
 	}
 
-	public void substractHeight(int n) {
+	public void decreaseHeight(int n) {
 		height -= n;
 	}
 

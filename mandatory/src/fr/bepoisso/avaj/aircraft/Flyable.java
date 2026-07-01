@@ -13,6 +13,6 @@ public abstract class Flyable {
 		p_tower.register(this);
 	}
 
-	public abstract void updateConditions();
+	public abstract void updateConditions() throws InvalidAircraftException, InvalidLoggerException;
 	public abstract String getHeader();
 }

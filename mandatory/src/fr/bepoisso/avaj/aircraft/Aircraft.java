@@ -16,10 +16,8 @@ public abstract class Aircraft extends Flyable {
 		this.coordinates = p_coordinates;
 	}
 
-	private void land(String s)
+	protected void land()
 	throws InvalidAircraftException, InvalidLoggerException {
-		if (coordinates.getHeight() > 0)
-			throw new InvalidAircraftException("Can't land aircraft with height > 0");
 		Logger.getInstance().log(getHeader() + " landing.");
 		weatherTower.unregister(this);
 	}
