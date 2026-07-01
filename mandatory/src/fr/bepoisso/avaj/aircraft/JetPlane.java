@@ -11,4 +11,9 @@ public class JetPlane extends Aircraft {
 	public void updateConditions() {
 		// TODO
 	}
+
+	@Override
+	public String getHeader() {
+		return String.format("JetPlane#%s(%d)", name, id);
+	}
 }

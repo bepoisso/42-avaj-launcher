@@ -11,4 +11,9 @@ public class Balloon extends Aircraft {
 	public  void updateConditions() {
 		// TODO
 	}
+
+	@Override
+	public String getHeader() {
+		return String.format("Balloon#%s(%d)", name, id);
+	}
 }

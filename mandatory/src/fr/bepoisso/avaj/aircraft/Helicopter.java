@@ -11,4 +11,9 @@ public class Helicopter extends Aircraft {
 	public void updateConditions() {
 		// TODO
 	}
+
+	@Override
+	public String getHeader() {
+		return String.format("Helicopter#%s(%d)", name, id);
+	}
 }
