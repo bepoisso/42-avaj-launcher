@@ -1,15 +1,19 @@
-package fr.bepoisso.avaj.coordinates;
+package fr.bepoisso.avaj.simulator;
 
 import fr.bepoisso.avaj.aircraft.AircraftFactory;
 import fr.bepoisso.avaj.aircraft.Flyable;
+import fr.bepoisso.avaj.exception.InvalidScenarioException;
+import fr.bepoisso.avaj.logger.Logger;
 import fr.bepoisso.avaj.parser.Parser;
+import fr.bepoisso.avaj.weather.WeatherTower;
 
 import java.util.List;
 
 public class Simulator {
 	private final String path;
 	private List<String[]> scenario;
-	private List<Flyable> flyables;
+	private int step;
+	private WeatherTower tower;
 
 	public Simulator(String p_path) {
 		path = p_path;
@@ -24,18 +28,27 @@ public class Simulator {
 	public void factory()
 	throws  Exception {
 		AircraftFactory factory = AircraftFactory.getInstance();
+		tower = new WeatherTower();
+		step = Integer.parseInt(scenario.get(0)[0]);
+		if (step <= 0)
+			throw new InvalidScenarioException("Bad time simulation value");
+
 		for (int i = 1; i < scenario.size(); i++) {
-			String[] ss = scenario.get(i);
+			String[] args = scenario.get(i);
 			Coordinates coords = new Coordinates(
-					Integer.parseInt(ss[2]),
-					Integer.parseInt(ss[3]),
-					Integer.parseInt(ss[4]));
-			flyables.add(factory.newAircraft(ss[0], ss[1], coords));
+					Integer.parseInt(args[2]),
+					Integer.parseInt(args[3]),
+					Integer.parseInt(args[4]));
+			Flyable fly = factory.newAircraft(args[0], args[1], coords);
+			fly.registerTower(tower);
 		}
 	}
 
 	public void run()
 	throws Exception {
-
+		for (int i = 0; i < step - 1; ++i) {
+			tower.changeWeather();
+		}
+		Logger.getInstance().close();
 	}
 }
