@@ -1,7 +1,6 @@
 package fr.bepoisso.avaj.weather;
 
-import fr.bepoisso.avaj.coordinates.Coordinates;
-import fr.bepoisso.avaj.exception.InvalidWeatherException;
+import fr.bepoisso.avaj.simulator.Coordinates;
 
 public class WeatherProvider {
 	private static WeatherProvider instance;
