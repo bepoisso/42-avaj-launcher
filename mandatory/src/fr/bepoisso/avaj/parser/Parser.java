@@ -14,7 +14,7 @@ public class Parser {
 		path = Path.of(p_filepath);
 	}
 
-	private List<String[]> parse()
+	public List<String[]> parse()
 	throws InvalidScenarioException {
 		List<String[]> result = new ArrayList<>();
 		try {
@@ -30,12 +30,12 @@ public class Parser {
 						throw new InvalidScenarioException("Bad time simulation value");
 				}
 				else {
+					if (tokens.length != 5)
+						throw new InvalidScenarioException("Bad number of arguments");
 					if (!tokens[0].equals("Balloon") && !tokens[0].equals("JetPlane") && !tokens[0].equals("Helicopter"))
 						throw new InvalidScenarioException("Unknown aircraft type");
 					if (!tokens[1].matches("[a-zA-Z0-9]+"))
 						throw new InvalidScenarioException("Bad name type");
-					if (tokens.length != 5)
-						throw new InvalidScenarioException("Bad number of arguments");
 					if (Integer.parseInt(tokens[2]) < 0)
 						throw new InvalidScenarioException("Bad longitude value");
 					if (Integer.parseInt(tokens[3]) < 0)
