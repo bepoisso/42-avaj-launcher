@@ -1,11 +1,9 @@
 package fr.bepoisso.avaj.aircraft;
 
-import fr.bepoisso.avaj.coordinates.Coordinates;
+import fr.bepoisso.avaj.simulator.Coordinates;
 import fr.bepoisso.avaj.exception.InvalidAircraftException;
 import fr.bepoisso.avaj.exception.InvalidLoggerException;
 import fr.bepoisso.avaj.logger.Logger;
-
-import java.beans.Expression;
 
 public class Balloon extends Aircraft {
 	public Balloon(long p_id, String p_name, Coordinates p_coordinates) {

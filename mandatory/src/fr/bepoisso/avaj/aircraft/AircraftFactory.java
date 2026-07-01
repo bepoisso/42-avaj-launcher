@@ -1,6 +1,6 @@
 package fr.bepoisso.avaj.aircraft;
 
-import fr.bepoisso.avaj.coordinates.Coordinates;
+import fr.bepoisso.avaj.simulator.Coordinates;
 import fr.bepoisso.avaj.exception.InvalidAircraftException;
 
 public class AircraftFactory {
