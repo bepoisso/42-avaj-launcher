@@ -13,7 +13,7 @@ public class Main {
 		System.out.println("===== AVAJ-LUNCHER =====");
 		System.out.println("========================\n");
 		try {
-			Simulator simulator = new Simulator(args[1]);
+			Simulator simulator = new Simulator(args[0]);
 			simulator.parse();
 			System.out.println("Done ✅");
 			simulator.factory();
