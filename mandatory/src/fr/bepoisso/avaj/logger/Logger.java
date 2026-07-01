@@ -3,7 +3,9 @@ package fr.bepoisso.avaj.logger;
 import fr.bepoisso.avaj.exception.InvalidLoggerException;
 
 import java.io.FileWriter;
+import java.io.IOException;
 
+// TODO: Sigleton this class
 public class Logger {
 
 	FileWriter writer = null;
@@ -12,7 +14,7 @@ public class Logger {
 	throws InvalidLoggerException {
 		try {
 			writer = new FileWriter("simulation.txt", true);
-		} catch (Exception e) {
+		} catch (IOException e) {
 			throw new InvalidLoggerException(e.getMessage());
 		}
 	}
@@ -23,7 +25,7 @@ public class Logger {
 			writer.write(s);
 			writer.write("\n");
 			writer.flush();
-		} catch (Exception e) {
+		} catch (IOException e) {
 			throw new InvalidLoggerException(e.getMessage());
 		}
 	}
@@ -31,7 +33,7 @@ public class Logger {
 	public void close() throws InvalidLoggerException {
 		try {
 			writer.close();
-		} catch (Exception e) {
+		} catch (IOException e) {
 			throw new InvalidLoggerException(e.getMessage());
 		}
 	}
