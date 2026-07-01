@@ -36,7 +36,8 @@ public class Tower {
 		observers.clear();
 	}
 
-	protected void conditionChanged() {
+	protected void conditionChanged()
+	throws InvalidAircraftException, InvalidLoggerException {
 		for (Flyable flyable : observers)
 			flyable.updateConditions();
 	}
