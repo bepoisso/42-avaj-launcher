@@ -25,10 +25,11 @@ public class Tower {
 	}
 
 	public void unregister(Flyable p_flyable)
-	throws InvalidAircraftException {
+	throws InvalidLoggerException, InvalidAircraftException {
 		if (!observers.contains(p_flyable))
 			throw new InvalidAircraftException("Flyable not registered");
 		observers.remove(p_flyable);
+		Logger.getInstance().log("Tower says: " + p_flyable.getHeader() + " unregistered from weather tower.");
 	}
 
 	public void clear() {
