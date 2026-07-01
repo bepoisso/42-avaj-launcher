@@ -21,12 +21,14 @@ public class Simulator {
 
 	public void parse()
 	throws Exception {
+		System.out.println("\n--- Parsing Process ---");
 		Parser parser = new Parser(path);
 		scenario = parser.parse();
 	}
 
 	public void factory()
 	throws  Exception {
+		System.out.println("\n--- Factory Process ---");
 		AircraftFactory factory = AircraftFactory.getInstance();
 		tower = new WeatherTower();
 		step = Integer.parseInt(scenario.get(0)[0]);
@@ -46,6 +48,7 @@ public class Simulator {
 
 	public void run()
 	throws Exception {
+		System.out.println("\n--- Simulation Process ---");
 		for (int i = 0; i < step - 1; ++i) {
 			tower.changeWeather();
 		}
