@@ -12,13 +12,16 @@
 *.rar
 **/bin/
 
-# VS Code
+# IDE
 .vscode/
 .classpath
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
+*.iml
+*.idea
+*.xml
 
 # Misc
 *.swp
