@@ -10,14 +10,11 @@ import java.util.List;
 public class Parser {
 	private Path path = null;
 
-	public Parser(String p_filepath)
-	throws InvalidScenarioException {
+	public Parser(String p_filepath) {
 		path = Path.of(p_filepath);
-		if (path == null)
-			throw new InvalidScenarioException("Bad path");
 	}
 
-	private List<String[]> checkFile()
+	private List<String[]> parse()
 	throws InvalidScenarioException {
 		List<String[]> result = new ArrayList<>();
 		try {
@@ -33,8 +30,8 @@ public class Parser {
 						throw new InvalidScenarioException("Bad time simulation value");
 				}
 				else {
-					if (!tokens[0].equals("Baloon") && !tokens[0].equals("JetPlane") && !tokens[0].equals("Helicopter"))
-							throw new InvalidScenarioException("Unknown aircraft type");
+					if (!tokens[0].equals("Balloon") && !tokens[0].equals("JetPlane") && !tokens[0].equals("Helicopter"))
+						throw new InvalidScenarioException("Unknown aircraft type");
 					if (!tokens[1].matches("[a-zA-Z0-9]+"))
 						throw new InvalidScenarioException("Bad name type");
 					if (tokens.length != 5)
@@ -52,12 +49,5 @@ public class Parser {
 			throw new InvalidScenarioException(e.getMessage());
 		}
 		return result;
-	}
-
-	public void parse()
-	throws InvalidScenarioException {
-		checkFile();
-
-
 	}
 }
