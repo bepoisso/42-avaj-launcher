@@ -1,4 +1,4 @@
-package fr.bepoisso.avaj.coordinates;
+package fr.bepoisso.avaj.simulator;
 
 import fr.bepoisso.avaj.exception.InvalidCoordinateException;
 
