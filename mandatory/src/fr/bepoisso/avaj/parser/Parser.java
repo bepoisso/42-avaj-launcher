@@ -46,6 +46,12 @@ public class Parser {
 						throw new InvalidAircraftException("unknown aircraft type");
 					if (!tokens[1].matches("[a-zA-Z0-9]+"))
 						throw new InvalidScenarioException("bad name type");
+					if (Integer.parseInt(tokens[2]) < 0)
+						throw new InvalidScenarioException("bad longitude value");
+					if (Integer.parseInt(tokens[3]) < 0)
+						throw new InvalidScenarioException("bad latitude value");
+					if (Integer.parseInt(tokens[4]) < 0 || Integer.parseInt(tokens[4]) > 100)
+						throw new InvalidScenarioException("bad height value");
 				}
 				result.add(tokens);
 			}
