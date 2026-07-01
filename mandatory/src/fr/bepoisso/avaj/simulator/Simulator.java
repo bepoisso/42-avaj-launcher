@@ -42,16 +42,22 @@ public class Simulator {
 					Integer.parseInt(args[3]),
 					Integer.parseInt(args[4]));
 			Flyable fly = factory.newAircraft(args[0], args[1], coords);
-			fly.registerTower(tower);
+			if (coords.getHeight() > 0)
+				fly.registerTower(tower);
 		}
 	}
 
 	public void run()
 	throws Exception {
 		System.out.println("\n--- Simulation Process ---");
-		for (int i = 0; i < step - 1; ++i) {
+		for (int i = 0; i < step; ++i) {
+			if (!tower.hasObservers())
+				break;
+			System.out.printf("--Step %d--\n", i + 1);
 			tower.changeWeather();
+			Logger.getInstance().log("");
 		}
+		tower.clear();
 		Logger.getInstance().close();
 	}
 }

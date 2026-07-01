@@ -22,6 +22,7 @@
 *.iml
 *.idea
 *.xml
+**/out/
 
 # Misc
 *.swp
@@ -29,3 +30,4 @@
 *~
 .env
 sources.txt
+simulation.txt

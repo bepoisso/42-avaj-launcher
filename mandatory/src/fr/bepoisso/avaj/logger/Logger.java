@@ -3,7 +3,6 @@ package fr.bepoisso.avaj.logger;
 import fr.bepoisso.avaj.exception.InvalidLoggerException;
 
 import java.io.FileWriter;
-import java.io.IOException;
 
 public class Logger {
 	private static Logger instance;
@@ -12,9 +11,9 @@ public class Logger {
 	private Logger()
 	throws InvalidLoggerException {
 		try {
-			writer = new FileWriter("simulation.txt", true);
-		} catch (IOException e) {
-			throw new InvalidLoggerException(e.getMessage());
+			writer = new FileWriter("simulation.txt", false);
+		} catch (Exception e) {
+			throw new InvalidLoggerException("logger: " + e.getMessage());
 		}
 	}
 
@@ -24,16 +23,16 @@ public class Logger {
 			writer.write(s);
 			writer.write("\n");
 			writer.flush();
-		} catch (IOException e) {
-			throw new InvalidLoggerException(e.getMessage());
+		} catch (Exception e) {
+			throw new InvalidLoggerException("logger: " + e.getMessage());
 		}
 	}
 
 	public void close() throws InvalidLoggerException {
 		try {
 			writer.close();
-		} catch (IOException e) {
-			throw new InvalidLoggerException(e.getMessage());
+		} catch (Exception e) {
+			throw new InvalidLoggerException("logger: " + e.getMessage());
 		}
 	}
 

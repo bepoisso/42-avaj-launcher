@@ -5,7 +5,9 @@ MAIN_CLASS = fr.bepoisso.avaj.Main
 SOURCES = \
 	$(SRC_DIR)/Main.java \
 	$(SRC_DIR)/aircraft/Aircraft.java \
+	$(SRC_DIR)/aircraft/AircraftFactory.java \
 	$(SRC_DIR)/aircraft/Balloon.java \
+	$(SRC_DIR)/aircraft/Flyable.java \
 	$(SRC_DIR)/aircraft/Helicopter.java \
 	$(SRC_DIR)/aircraft/JetPlane.java \
 	$(SRC_DIR)/simulator/Coordinates.java \
@@ -18,6 +20,7 @@ SOURCES = \
 	$(SRC_DIR)/exception/InvalidAircraftException.java \
 	$(SRC_DIR)/exception/InvalidCoordinateException.java \
 	$(SRC_DIR)/exception/InvalidLoggerException.java \
+	$(SRC_DIR)/exception/InvalidScenarioException.java \
 	$(SRC_DIR)/exception/InvalidWeatherException.java
 
 all: $(BUILD_DIR)/.compiled

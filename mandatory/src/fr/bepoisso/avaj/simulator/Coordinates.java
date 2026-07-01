@@ -7,13 +7,11 @@ public class Coordinates {
 	private int latitude;
 	private int height;
 
-	Coordinates(int p_longitude, int p_latitude, int p_height)
-	throws InvalidCoordinateException {
-		if (p_latitude < 0 || p_longitude < 0)
-			throw new InvalidCoordinateException("Bad arguments");
+	Coordinates(int p_longitude, int p_latitude, int p_height) {
 		this.longitude = p_longitude;
 		this.latitude = p_latitude;
 		this.height = p_height;
+		checkValue();
 	}
 
 	public void checkValue() {

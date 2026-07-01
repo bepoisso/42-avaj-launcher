@@ -36,9 +36,13 @@ public class Tower {
 		observers.clear();
 	}
 
+	public boolean hasObservers() {
+		return !observers.isEmpty();
+	}
+
 	protected void conditionChanged()
 	throws InvalidAircraftException, InvalidLoggerException {
-		for (Flyable flyable : observers)
+		for (Flyable flyable : new ArrayList<>(observers))
 			flyable.updateConditions();
 	}
 }

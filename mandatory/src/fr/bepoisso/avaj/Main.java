@@ -10,8 +10,8 @@ public class Main {
 		}
 
 		System.out.println("========================");
-		System.out.println("===== AVAJ-LUNCHER =====");
-		System.out.println("========================\n");
+		System.out.println("      AVAJ-LUNCHER      ");
+		System.out.println("========================");
 		try {
 			Simulator simulator = new Simulator(args[0]);
 			simulator.parse();
@@ -20,11 +20,12 @@ public class Main {
 			System.out.println("Done ✅");
 			simulator.run();
 			System.out.println("Done ✅");
-			System.out.println("\n--- End of simulation\n");
+			System.out.println("--- End of simulation ---\n");
 
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			System.err.println(e.getClass().getSimpleName() + " - error: " + e.getMessage());
 			System.out.println("Fail ❌");
+			System.exit(1);
 		}
 	}
 }
