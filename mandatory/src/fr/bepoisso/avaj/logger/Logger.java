@@ -1,12 +1,38 @@
 package fr.bepoisso.avaj.logger;
 
-public class Logger {
-	// Atributs
-		// TODO add output files
-	// Constructor
+import fr.bepoisso.avaj.exception.InvalidLoggerException;
 
-	// Methodes
-	public void log(String s) {
-		// TODO write log in output file
+import java.io.FileWriter;
+
+public class Logger {
+
+	FileWriter writer = null;
+
+	public Logger()
+	throws InvalidLoggerException {
+		try {
+			writer = new FileWriter("simulation.txt", true);
+		} catch (Exception e) {
+			throw new InvalidLoggerException(e.getMessage());
+		}
+	}
+
+	public void log(String s)
+	throws InvalidLoggerException {
+		try {
+			writer.write(s);
+			writer.write("\n");
+			writer.flush();
+		} catch (Exception e) {
+			throw new InvalidLoggerException(e.getMessage());
+		}
+	}
+
+	public void close() throws InvalidLoggerException {
+		try {
+			writer.close();
+		} catch (Exception e) {
+			throw new InvalidLoggerException(e.getMessage());
+		}
 	}
 }
