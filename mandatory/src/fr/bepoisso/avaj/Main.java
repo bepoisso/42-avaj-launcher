@@ -4,7 +4,7 @@ import fr.bepoisso.avaj.simulator.Simulator;
 
 public class Main {
 	public static void main(String[] args) {
-		if (args.length != 2) {
+		if (args.length != 1) {
 			System.err.println("Wrong number of arguments");
 			return;
 		}
