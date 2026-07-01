@@ -37,7 +37,7 @@ public class Logger {
 		}
 	}
 
-	private static Logger getInstance()
+	public static Logger getInstance()
 	throws InvalidLoggerException {
 		if (instance == null)
 			instance = new Logger();
